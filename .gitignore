@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Pretrained weights (download separately — see README)
+pretrained/
+
+# Training / inference outputs
+outdir/
+exp/
+
+# Datasets (download separately — see README)
+data/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
