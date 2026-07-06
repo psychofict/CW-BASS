@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CW-BASS: Confidence-Weighted Boundary-Aware Learning for Semi-Supervised Semantic Segmentation. IJCNN 2025.">
+  <meta name="author" content="Ebenezer Tarubinga">
+  <title>CW-BASS | IJCNN 2025</title>
+
+  <!-- Social / link-preview cards -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CW-BASS: Confidence-Weighted Boundary-Aware Learning for Semi-Supervised Semantic Segmentation">
+  <meta property="og:description" content="IJCNN 2025. 65.9% mIoU on Cityscapes with only 100 labeled images.">
+  <meta property="og:url" content="https://psychofict.github.io/CW-BASS/">
+  <meta property="og:image" content="https://psychofict.github.io/CW-BASS/assets/images/framework.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CW-BASS (IJCNN 2025)">
+  <meta name="twitter:description" content="Confidence-Weighted Boundary-Aware Learning for Semi-Supervised Semantic Segmentation.">
+  <meta name="twitter:image" content="https://psychofict.github.io/CW-BASS/assets/images/framework.png">
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;🧩&lt;/text&gt;&lt;/svg&gt;">
+
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFYF6ZWHZZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YFYF6ZWHZZ');
+  </script>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <div class="page-container">
+
+    <!-- ===== HERO ===== -->
+    <div class="hero">
+      <h1 class="hero-title">CW-BASS: Confidence-Weighted Boundary-Aware Learning for Semi-Supervised Semantic Segmentation</h1>
+
+      <div class="hero-authors">
+        <span class="author-self">Ebenezer Tarubinga</span><a class="orcid" href="https://orcid.org/0009-0004-7340-1873" target="_blank" rel="me noopener" title="ORCID iD 0009-0004-7340-1873" aria-label="ORCID iD of Ebenezer Tarubinga"><svg viewBox="0 0 256 256" width="14" height="14" aria-hidden="true"><path d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z" fill="#A6CE39"/><g fill="#fff"><path d="M86.3 186.2H70.9V79.1h15.4v107.1z"/><path d="M108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7C191.7 111.2 178 93 148 93h-23.7v79.4z"/><path d="M88.7 56.8c0 5.5-4.5 10.1-10.1 10.1s-10.1-4.6-10.1-10.1c0-5.6 4.5-10.1 10.1-10.1s10.1 4.6 10.1 10.1z"/></g></svg></a>&ensp;&middot;&ensp;<a href="https://scholar.google.com/citations?user=uH_-hRUAAAAJ&hl=en">Jenifer Kalafatovich</a>&ensp;&middot;&ensp;<a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee">Seong-Whan Lee</a>
+      </div>
+
+      <div class="hero-affiliation">Pattern Recognition &amp; Machine Learning Lab, Korea University</div>
+
+      <div><span class="hero-venue">IJCNN 2025</span></div>
+
+      <div class="hero-actions">
+        <a class="action-btn" href="https://ieeexplore.ieee.org/abstract/document/11227871/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          Paper
+        </a>
+        <a class="action-btn" href="https://github.com/psychofict/CW-BASS">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          Code
+        </a>
+        <a class="action-btn" href="https://arxiv.org/pdf/2502.15152">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          PDF
+        </a>
+        <button class="action-btn" onclick="document.getElementById('cite').scrollIntoView({behavior:'smooth'})">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          Cite
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== TEASER ===== -->
+    <section class="teaser">
+      <img src="assets/images/framework.png" alt="CW-BASS Framework Overview" class="teaser-img">
+      <p class="teaser-caption">Overview of the CW-BASS framework. Stage I generates confidence-weighted pseudo-labels with dynamic thresholding. Stage II refines segmentation with boundary-aware learning and confidence decay.</p>
+    </section>
+
+    <!-- ===== HIGHLIGHT STATS ===== -->
+    <div class="highlight-bar">
+      <div class="highlight-stat">
+        <div class="highlight-value">65.9%</div>
+        <div class="highlight-label">mIoU &middot; Cityscapes 1/30</div>
+      </div>
+      <div class="highlight-stat">
+        <div class="highlight-value">78.4%</div>
+        <div class="highlight-label">mIoU &middot; Cityscapes 1/4</div>
+      </div>
+      <div class="highlight-stat">
+        <div class="highlight-value">76.2%</div>
+        <div class="highlight-label">mIoU &middot; Pascal VOC 1/4</div>
+      </div>
+      <div class="highlight-stat">
+        <div class="highlight-value">100</div>
+        <div class="highlight-label">Labeled Images (3.3%)</div>
+      </div>
+    </div>
+
+    <!-- ===== ABSTRACT ===== -->
+    <section id="abstract">
+      <h2 class="section-title">Abstract</h2>
+      <p class="abstract-text">
+        Semi-supervised semantic segmentation (SSSS) aims to improve segmentation performance by utilizing large amounts of unlabeled data with limited labeled samples. Existing methods often suffer from <strong>coupling</strong>, where over-reliance on initial labeled data leads to suboptimal learning; <strong>confirmation bias</strong>, where incorrect predictions reinforce themselves repeatedly; and <strong>boundary blur</strong> caused by limited boundary-awareness and ambiguous edge cues. To address these issues, we propose CW-BASS, a novel framework for SSSS. We assign confidence weights to pseudo-labels to mitigate the impact of incorrect predictions, and leverage boundary-delineation techniques that remain underutilized in SSSS. Extensive experiments on Pascal VOC 2012 and Cityscapes demonstrate that CW-BASS achieves state-of-the-art performance. Notably, CW-BASS achieves a <strong>65.9% mIoU on Cityscapes</strong> under a challenging 1/30 split (100 images), highlighting its effectiveness in limited-label settings.
+      </p>
+    </section>
+
+    <!-- ===== KEY CONTRIBUTIONS ===== -->
+    <section id="contributions">
+      <h2 class="section-title">Key Contributions</h2>
+      <div class="contributions-grid">
+        <div class="contribution-card">
+          <div class="contribution-number">1</div>
+          <div class="contribution-title">Confidence-Weighted Loss</div>
+          <p class="contribution-desc">Reduces coupling by adjusting pseudo-label influence based on predicted confidence scores, downweighting unreliable predictions.</p>
+        </div>
+        <div class="contribution-card">
+          <div class="contribution-number">2</div>
+          <div class="contribution-title">Dynamic Thresholding</div>
+          <p class="contribution-desc">Mitigates confirmation bias with an adaptive mechanism that learns to filter pseudo-labels based on model performance.</p>
+        </div>
+        <div class="contribution-card">
+          <div class="contribution-number">3</div>
+          <div class="contribution-title">Boundary-Aware Module</div>
+          <p class="contribution-desc">Tackles boundary blur using explicit boundary supervision to refine segmentation near object edges.</p>
+        </div>
+        <div class="contribution-card">
+          <div class="contribution-number">4</div>
+          <div class="contribution-title">Confidence Decay</div>
+          <p class="contribution-desc">Reduces label noise through a progressive strategy that refines pseudo-label confidence during training.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VISUAL RESULTS ===== -->
+    <section id="results">
+      <h2 class="section-title">Visual Results (Pascal VOC 2012)</h2>
+      <div class="results-gallery">
+        <div class="result-item">
+          <img src="assets/images/gif1.gif" alt="Segmentation result 1">
+          <div class="result-label">Sample 1</div>
+        </div>
+        <div class="result-item">
+          <img src="assets/images/gif2.gif" alt="Segmentation result 2">
+          <div class="result-label">Sample 2</div>
+        </div>
+        <div class="result-item">
+          <img src="assets/images/gif3.gif" alt="Segmentation result 3">
+          <div class="result-label">Sample 3</div>
+        </div>
+        <div class="result-item">
+          <img src="assets/images/gif4.gif" alt="Segmentation result 4">
+          <div class="result-label">Sample 4</div>
+        </div>
+        <div class="result-item">
+          <img src="assets/images/gif5.gif" alt="Segmentation result 5">
+          <div class="result-label">Sample 5</div>
+        </div>
+        <div class="result-item">
+          <img src="assets/images/gif6.gif" alt="Segmentation result 6">
+          <div class="result-label">Sample 6</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== QUANTITATIVE RESULTS ===== -->
+    <section id="quantitative">
+      <h2 class="section-title">Quantitative Results</h2>
+      <div class="table-wrapper">
+        <img src="assets/images/quantitative-results.png" alt="Performance comparison on Pascal VOC 2012 and Cityscapes" class="table-img">
+      </div>
+      <p class="table-caption">Performance comparison (mIoU %) on Pascal VOC 2012 and Cityscapes across different label partitions. All experiments use DeepLabV3+ with ResNet-50. Best results in bold.</p>
+    </section>
+
+    <!-- ===== QUALITATIVE RESULTS ===== -->
+    <section id="qualitative">
+      <h2 class="section-title">Qualitative Results</h2>
+      <img src="assets/images/qualitative-results.png" alt="Qualitative comparison of segmentation outputs" class="qualitative-img">
+      <p class="table-caption">Qualitative comparison on Pascal VOC 2012 and Cityscapes. CW-BASS produces sharper boundaries and more accurate segmentation masks compared to prior methods.</p>
+    </section>
+
+    <!-- ===== CITATION ===== -->
+    <section id="cite">
+      <h2 class="section-title">Citation</h2>
+      <div class="citation-block">
+        <button class="copy-btn" onclick="copyBibtex(this)">Copy</button>
+        <pre><code id="bibtex">@inproceedings{tarubinga2025cwbass,
+  author    = {Tarubinga, Ebenezer and Kalafatovich, Jenifer
+               and Lee, Seong-Whan},
+  title     = {CW-BASS: Confidence-Weighted Boundary-Aware Learning
+               for Semi-Supervised Semantic Segmentation},
+  booktitle = {2025 International Joint Conference on Neural
+               Networks (IJCNN)},
+  year      = {2025},
+  pages     = {1--8},
+  address   = {Rome, Italy},
+  doi       = {10.1109/IJCNN64981.2025.11227871},
+  keywords  = {Semi-Supervised Learning, Semantic Segmentation,
+               Pseudo-Labeling, Confidence Weighting}
+}</code></pre>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="page-footer">
+    <div class="page-container">
+      <p><a href="https://psychofict.github.io">Ebenezer Tarubinga</a> &middot; Pattern Recognition &amp; ML Lab, Korea University</p>
+    </div>
+  </footer>
+
+  <script>
+    function copyBibtex(btn) {
+      const text = document.getElementById('bibtex').textContent;
+      navigator.clipboard.writeText(text).then(function() {
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(function() {
+          btn.textContent = 'Copy';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>
